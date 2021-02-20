@@ -1,7 +1,10 @@
+$font-color: linear-gradient(to bottom right, rgba(255, 96, 145, 1), rgba(81, 39, 221, 1));;
+
 body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-image: $font-color;
 }
 
 main {
@@ -9,6 +12,6 @@ main {
 }
 
 section {
-    max-width: 800px;
+    max-width: 900px;
     margin: 50px auto;
 }

@@ -1,4 +1,5 @@
-const dotenv = require('dotenv').config();
+const dotenv = require('dotenv');
+dotenv.config();
 const bodyParser = require('body-parser')
  // Express to run server and routes
 const express = require('express');
@@ -9,7 +10,7 @@ const app = express();
 const baseUrl = "https://api.meaningcloud.com/sentiment-2.1?key="
 const apiKey = process.env.API_KEY;
 console.log(`Your API key is ${process.env.API_KEY}`);
-console.log(process.env)
+
 
 //configuring express to use body-parser as middle-ware.
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -24,3 +25,11 @@ function listening() {
 }
 
 app.use(express.static('dist'));
+
+app.get('/', function (req, res) {
+    res.sendFile('dist/index.html');
+});
+
+app.post('/test', function (req, res){
+    res.send(data);
+});

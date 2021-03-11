@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
 
-const port = 8081;
+const port = 8080;
 const server = app.listen(port, listening);
 
 function listening() {
@@ -30,6 +30,11 @@ app.get('/', function (req, res) {
     res.sendFile('dist/index.html');
 });
 
+const data = [];
+console.log(data);
 app.post('/test', function (req, res){
+    let newData = req.body;
+    console.log(newData)
+    data.push(newData);
     res.send(data);
 });

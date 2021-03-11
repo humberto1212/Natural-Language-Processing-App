@@ -1,4 +1,4 @@
-const postData = async (url = '', data)=>{
+const postData = async (url = '', data = {})=>{
     console.log(data);
       const response = await fetch(url, {
       method: 'POST', 
@@ -8,8 +8,8 @@ const postData = async (url = '', data)=>{
       },
      // Body data type must match "Content-Type" header        
       body: JSON.stringify(data), 
-    });
 
+    });
       try {
         const newData = await response.json();
         console.log(newData);
@@ -20,24 +20,24 @@ const postData = async (url = '', data)=>{
   }
  
  function handleSubmit(event) {
-    event.preventDefault()
+  event.preventDefault()
 
-    // check what text was put into the form field
-    let formText = document.getElementById('name').value
+  // check what text was put into the form field
+  let formText = document.getElementById('name').value
 
-    Client.checkForName(formText)
+  Client.checkForName(formText)
+  postData('http://localhost:8080/test', {name: formText})
+  .then(function(res) {
+        console.log(res);
+  })
 
-    let name = document.getElementById('results').innerHTML;
-
-    postData('http://localhost:8080/test', {name})
-
- /*     console.log("::: Form Submitted :::")
+/*      console.log("::: Form Submitted :::")
     fetch('http://localhost:8081/test')
     .then(res => res.json())
     .then(function(res) {
         document.getElementById('results').innerHTML = res.message
-    })  */
+    })   */
 
 }
 
-export {handleSubmit, postData};
+export {handleSubmit};

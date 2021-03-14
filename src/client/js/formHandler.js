@@ -19,6 +19,7 @@ const postData = async (url = '', data = {})=>{
       }
   }
  
+
  function handleSubmit(event) {
   event.preventDefault()
 
@@ -26,17 +27,11 @@ const postData = async (url = '', data = {})=>{
   let formText = document.getElementById('name').value
 
   Client.checkForName(formText)
-  postData('http://localhost:8080/test', {name: formText})
+  
+  postData('http://localhost:8081/test', {name: formText})
   .then(function(res) {
-        console.log(res);
+        document.getElementById('results').innerHTML = res[0].name
   })
-
-/*      console.log("::: Form Submitted :::")
-    fetch('http://localhost:8081/test')
-    .then(res => res.json())
-    .then(function(res) {
-        document.getElementById('results').innerHTML = res.message
-    })   */
 
 }
 

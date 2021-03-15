@@ -31,7 +31,6 @@ app.get('/', function (req, res) {
 });
 
 let data = [];
-console.log(data)
 app.post('/test', function (req, res){
     let newData = req.body;
     let newEntry = {
@@ -40,4 +39,5 @@ app.post('/test', function (req, res){
     console.log(newEntry)
     data.unshift(newEntry);
     res.send(data);
+    console.log(data)
 });

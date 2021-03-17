@@ -28,9 +28,9 @@ const postData = async (url = '', data = {})=>{
 
   Client.checkForName(formText)
   
-  postData('http://localhost:8081/test', {name: formText})
+  postData('http://localhost:8081/test', {text: formText})
   .then(function(res) {
-        document.getElementById('results').innerHTML = res[0].name
+        document.getElementById('results').innerHTML = res
   })
 
 }

@@ -8,22 +8,6 @@ const cors = require('cors');
 // Start up an instance of app
 const app = express();
 
-const baseUrl = "https://api.meaningcloud.com/sentiment-2.1?key="
-const apiKey = process.env.API_KEY;
-console.log(`Your API key is ${process.env.API_KEY}`);
-
-
-const meaning = async (url, key, para) => {
-    const res = await fetch (url+key+'&of=json&txt='+para+'.&lang=en')
-    try{
-        const data = await res.json();
-        console.log(data);
-        return data;
-    }catch(error){
-        console.log("error", error)
-    }
-}
-
 //configuring express to use body-parser as middle-ware.
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -42,9 +26,18 @@ app.get('/', function (req, res) {
     res.sendFile('dist/index.html');
 });
 
-app.post('/api', function (req, res){
+const baseUrl = "https://api.meaningcloud.com/sentiment-2.1?key="
+const apiKey = process.env.API_KEY;
+console.log(`Your API key is ${process.env.API_KEY}`);
+
+app.post('/api', async function (req, res){
     const text = req.body.text;
-    const para = text
-    console.log(para);
-    meaning(baseUrl,apiKey,para)
+    const response = await fetch (baseUrl+apiKey+'&of=json&txt='+text+'.&lang=en')
+    try {
+        const data = await response.json();
+        console.log(data)
+        res.send(data);
+    }catch(error){
+        console.log('error', error)
+    }
 });

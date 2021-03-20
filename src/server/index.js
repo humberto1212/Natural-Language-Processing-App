@@ -29,14 +29,31 @@ app.get('/', function (req, res) {
 const baseUrl = "https://api.meaningcloud.com/sentiment-2.1?key="
 const apiKey = process.env.API_KEY;
 console.log(`Your API key is ${process.env.API_KEY}`);
+const score = "Score:"
 
 app.post('/api', async function (req, res){
     const text = req.body.text;
     const response = await fetch (baseUrl+apiKey+'&of=json&txt='+text+'.&lang=en')
     try {
         const data = await response.json();
+
+        const result = data;
+        const { score_tag } = result;
+        const { agreement } = result;
+        const { subjectivity } = result;
+        const { confidence } = result;
+        const { irony } = result;
+
+        const summaryResults = {
+            score_tag,
+            agreement,
+            subjectivity,
+            confidence,
+            irony
+        }
+
         console.log(data)
-        res.send(data);
+        res.send(summaryResults);
     }catch(error){
         console.log('error', error)
     }

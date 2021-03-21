@@ -1,3 +1,5 @@
+
+if( Client.validURL(formText)) {
 const postData = async (url = '', data = {})=>{
     console.log(data);
       const response = await fetch(url, {
@@ -17,7 +19,10 @@ const postData = async (url = '', data = {})=>{
       }catch(error) {
       console.log("error", error);
       }
-  }  
+  }
+}else{
+    console.log("Invalid URL")
+}
 
  function handleSubmit(event) {
   event.preventDefault()

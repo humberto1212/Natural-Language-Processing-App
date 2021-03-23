@@ -1,5 +1,3 @@
-
-if( Client.validURL(formText)) {
 const postData = async (url = '', data = {})=>{
     console.log(data);
       const response = await fetch(url, {
@@ -19,11 +17,8 @@ const postData = async (url = '', data = {})=>{
       }catch(error) {
       console.log("error", error);
       }
-  }
-}else{
-    console.log("Invalid URL")
-}
-
+    }
+ 
  function handleSubmit(event) {
   event.preventDefault()
 
@@ -36,7 +31,7 @@ const postData = async (url = '', data = {})=>{
   const objective = "Objective or Subjective: ";
   const confidenceLevel = "Confidence: ", porcent = " %";
   const irony = "Nonironic or Ironic: ";
-
+  if( Client.validURL(formText)) {
   postData('http://localhost:8081/api', {text: formText})
   .then(function(res) {
     document.getElementById('scoreTag').innerHTML = score + res.score_tag;
@@ -45,5 +40,9 @@ const postData = async (url = '', data = {})=>{
     document.getElementById('confidence').innerHTML = confidenceLevel + res.confidence + porcent;
     document.getElementById('irony').innerHTML = irony + res.irony;
   })
+  }else{
+    alert('Invalid Url')
+  }
 }
+
 export {handleSubmit};

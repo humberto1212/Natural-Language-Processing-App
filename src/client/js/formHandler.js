@@ -45,4 +45,4 @@ const postData = async (url = '', data = {})=>{
   }
 }
 
-export {handleSubmit};
+export {handleSubmit, postData};

@@ -18,7 +18,7 @@ The functionality is that the user enters a URL, this will be evaluated by the M
 
 - Jest
 
-### Installation:
+## Installation:
 
 #### Step 1: Signup for an API key
 

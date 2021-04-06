@@ -9,6 +9,8 @@ module.exports = {
     devtool: 'source-map',
     entry: './src/client/index.js',
     output: {
+            path: path.join(__dirname, "dist"),
+            filename: "main.js",
             libraryTarget: 'var',
             library: 'Client'
             },

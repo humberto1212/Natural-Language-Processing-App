@@ -41,9 +41,9 @@ The functionality is that the user enters a URL, this will be evaluated by the M
 `"style-loader": "^2.0.0"` -
 `"webpack-bundle-analyzer": "^4.4.0"` -
 `"webpack-dev-server": "^3.11.2"` -
-`"workbox-webpack-plugin": "^6.1.2"` -
+`"workbox-webpack-plugin": "^6.1.2"` 
 
-## Installation:
+## Installation
 
 #### Step 1: Signup for an API key
 
@@ -63,6 +63,8 @@ The functionality is that the user enters a URL, this will be evaluated by the M
 - `npm run build-prod` to generate a dist folder for prod
 
 - `npm start` to run the Express server on port 8081
+
+## Image
 
 <img width="1269" alt="Captura de Pantalla 2021-04-13 a la(s) 10 35 24 p  m" src="https://user-images.githubusercontent.com/71103179/114617666-b892cf80-9ca8-11eb-88bd-23fd192111ef.png">
 

@@ -66,5 +66,6 @@ The functionality is that the user enters a URL, this will be evaluated by the M
 
 ## Image
 
-<img width="1269" alt="Captura de Pantalla 2021-04-13 a la(s) 10 35 24 p  m" src="https://user-images.githubusercontent.com/71103179/114617666-b892cf80-9ca8-11eb-88bd-23fd192111ef.png">
+<img width="1270" alt="Captura de Pantalla 2021-04-13 a la(s) 10 45 20 p  m" src="https://user-images.githubusercontent.com/71103179/114618723-fa704580-9ca9-11eb-8d10-53853189a745.png">
+
 

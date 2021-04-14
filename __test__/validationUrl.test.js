@@ -1,4 +1,4 @@
-import {validURL} from './client/js/validationUrl'
+import {validURL} from '../src/client/js/validationUrl'
 
 describe("Testing the URL validation", () => {
     test("The url hast to be true", () => {
